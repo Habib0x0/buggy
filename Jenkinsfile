@@ -15,7 +15,7 @@ pipeline {
 					sh 'mvn snyk:test -fn'
 				}
 			}
-                  
+        }      
         stage('Build') { 
             steps { 
                withDockerRegistry([credentialsId: "dockerlogin", url: ""]) {
@@ -34,6 +34,8 @@ pipeline {
                     }
                 }
             }
-    	}          
+    	}
+
   }
 }
+
